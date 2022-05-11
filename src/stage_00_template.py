@@ -25,6 +25,7 @@ def main(config_path, params_path):
 
 
 if __name__ == '__main__':
+    # argparse.ArgumentParser() is used to take  user input value from command line
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default="configs/config.yaml")
     args.add_argument("--params", "-p", default="params.yaml")

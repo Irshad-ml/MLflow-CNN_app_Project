@@ -1,17 +1,8 @@
-echo [$(date)]: "START"
-echo [$(date)]: "creating environment"
-conda create --prefix ./env python=3.7 -y
-echo [$(date)]: "activate environment"
-source activate ./env
-echo [$(date)]: "install requirements"
-pip install -r requirements.txt
-echo [$(date)]: "export conda environment"
-conda env export > conda.yaml
-echo "# ${PWD}" > README.md
-echo [$(date)]: "first commit"
-git add .
-git commit -m "first commit"
-echo [$(date)]: "END"
+#We can execute below command one by one also by executing in the terminal or we can create one init_setup.sh file by using touch 
+#filename.sh in the terminal and
+#write everything here and it will automatically execute everything one by one 
 
-# to remove everything -
-# rm -rf env/ .gitignore conda.yaml README.md .git/
+conda create --prefix ./env python=3.7 -y
+source activate ./env
+pip install -r requirements.txt
+conda env export > conda.yaml
