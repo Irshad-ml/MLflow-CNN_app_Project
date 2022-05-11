@@ -142,4 +142,6 @@ configs/secrets.yaml
 # Dont want to upload the mlruns folder
 
 mlruns/
+data.zip
+running_logs.log
 

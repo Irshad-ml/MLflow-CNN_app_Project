@@ -1,0 +1,9 @@
+
+[2022-05-11 21:19:20,730: INFO: stage_01_get_data]: 
+********************
+[2022-05-11 21:19:20,730: INFO: stage_01_get_data]: >>>>> stage GET_DATA started <<<<<
+[2022-05-11 21:19:20,732: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-05-11 21:19:20,733: INFO: common]: created directory at: data
+[2022-05-11 21:19:20,734: INFO: stage_01_get_data]: downloading started............
+[2022-05-11 21:19:20,734: INFO: stage_01_get_data]: >>>>> stage GET_DATA completed!<<<<<
+
