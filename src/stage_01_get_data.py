@@ -3,7 +3,7 @@ import os
 import shutil
 from tqdm import tqdm
 import logging
-from src.utils.common import read_yaml, create_directories
+from src.utils.common import read_yaml, create_directories,unzip_file
 import random
 import urllib.request as req
 
@@ -45,6 +45,12 @@ def main(config_path, params_path):
     #params = read_yaml(params_path)
     #pass
 
+    #Unzipped 
+    unzipped_dir = config["data"]["unzip_data_dir"]
+    create_directories([unzipped_dir]) 
+    print("unzipped directory: ",unzipped_dir)
+    unzip_file(source = data_file_path, dest = unzipped_dir)
+ 
 
 if __name__ == '__main__':
     # argparse.ArgumentParser() is used to take  user input value from command line
