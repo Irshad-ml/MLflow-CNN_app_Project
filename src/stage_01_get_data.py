@@ -3,6 +3,8 @@ import os
 import shutil
 from tqdm import tqdm
 import logging
+#Import the validdating image from src/utils/data_mgmt.py ,here src used as a package
+from src.utils.data_mgmt import validating_img 
 from src.utils.common import read_yaml, create_directories,unzip_file
 import random
 import urllib.request as req
@@ -50,6 +52,16 @@ def main(config_path, params_path):
     create_directories([unzipped_dir]) 
     print("unzipped directory: ",unzipped_dir)
     unzip_file(source = data_file_path, dest = unzipped_dir)
+
+    #config value == {'data': {'source_url': 'https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_5340.zip', 
+    # 'local_dir': 'data', 
+    # 'data_file': 'data.zip', 
+    # 'unzip_data_dir': 'data',
+    # 'parent_data_dir :'PetImages',
+    # 'bad_data_dir':'bad_data'}}
+
+    #Validation of the data means good images will go the good directory and bad images will go the bad directory
+    validating_img(config)
  
 
 if __name__ == '__main__':
