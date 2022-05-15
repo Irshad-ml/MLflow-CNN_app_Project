@@ -36,9 +36,11 @@ conda env export > conda.yaml
 
 
 #### Notes
-##### We can execute below command one by one also by executing in the terminal or we can create one init_setup.sh file by using touch 
-# filename.sh in the terminal and
-# write everything here and it will automatically execute everything one by one 
+#### We can execute below command one by one also by executing in the terminal or we can create one init_setup.sh #by using touch  
+```
+Example : touch filename.sh
+```
+####  write everything in "init_setup.sh" and it will automatically execute everything one by one 
 ```
 conda create --prefix ./env python=3.7 -y
 source activate ./env
@@ -47,6 +49,7 @@ conda env export > conda.yaml
 ```
 
 ### After excuting above then excute 
+
 ```
 conda activate ./env
 ```
@@ -59,23 +62,31 @@ pip freeze
 pip list
 ```
 
-###### if u want to create multiple directory that means parent plus child directory then excute below command:
-###### -------     mkdir -p src/util ---------
+####  if u want to create multiple directory that means parent plus child directory then excute below command:
+```
+mkdir -p src/util 
+```
 
-# if you want to create the file inside directory execute below command from terminal of current environment(where we want the file)
-#  ------------------- touch src/example.py src/util/example2.py ----------------
+#### if you want to create the file inside directory execute below command from terminal of current environment(where we want the file)
+```
+ touch src/example.py src/util/example2.py
+
+```
 
 # setup.py file helps us to install anything as a package
 
-# if we want to  copy the file inside same directory or other director then execcute below command
-#  -------------cp src/stage_00_template.py src/stage_01_base_model.py----------------------------
+#### if we want to  copy the file inside same directory or other director then execcute below command
+```
+cp src/stage_00_template.py src/stage_01_base_model.py
 
-#### To run the mlflow execute the code at the terminal
+```
+
+#### Command to run MLProject file in the terminal
 ```
     mlflow run . --no-conda
 ```
 
-#### To run the mlflow with parameters execute the code at the terminal below " . " means current directory
+#### Command to run MLProject file for specific entry point with parameter in the terminal , " . " means current directory
 
 ```
     mlflow run . -e entry_point_name -P configs/config2.yaml --no-conda
