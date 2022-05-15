@@ -151,3 +151,4 @@ data/bad_data
 
 
 src/utils/data_mgmt.py
+data/model_dir/init_model.h5
