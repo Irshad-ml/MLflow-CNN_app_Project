@@ -3,5 +3,19 @@ name: CNN-app
 conda_env: conda.yaml
 
 entry_points:
+  #Here we define main.py file where we write about mlflow
   main:
-    command: "python main.py"
+    command: "python src/main.py"
+
+#Now we connect Stage1 and Stage 2 together through MLFLow Project
+
+  get_data : 
+    #and this src/stage_01_get_data.py files expects some file 
+    parameters : 
+        config : {type: str , default: "configs/config.yaml"}
+    command : "python src/stage_01_get_data.py    --config={config}"
+
+  base_model_creation: 
+    parameters : 
+        config : {type: str , default: "configs/config.yaml"}
+    command : "python src/stage_02_base_model.py  --config={config}"
