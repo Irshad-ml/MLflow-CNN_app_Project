@@ -47,6 +47,7 @@ conda env export > conda.yaml
 
 # After excuting above then excute conda activate ./env
 # pip freeze --->command to list down the package installed in the current environment
+# pip list
 
 # if u want to create multiple directory that means parent plus child directory then excute below command:
 # -------     mkdir -p src/util ---------
@@ -55,3 +56,6 @@ conda env export > conda.yaml
 #  ------------------- touch src/example.py src/util/example2.py ----------------
 
 # setup.py file helps us to install anything as a package
+
+# if we want to  copy the file inside same directory or other director then execcute below command
+#  -------------cp src/stage_00_template.py src/stage_01_base_model.py----------------------------
