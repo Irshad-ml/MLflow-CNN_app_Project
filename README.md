@@ -59,8 +59,8 @@ pip freeze
 pip list
 ```
 
-# if u want to create multiple directory that means parent plus child directory then excute below command:
-# -------     mkdir -p src/util ---------
+###### if u want to create multiple directory that means parent plus child directory then excute below command:
+###### -------     mkdir -p src/util ---------
 
 # if you want to create the file inside directory execute below command from terminal of current environment(where we want the file)
 #  ------------------- touch src/example.py src/util/example2.py ----------------
@@ -69,3 +69,17 @@ pip list
 
 # if we want to  copy the file inside same directory or other director then execcute below command
 #  -------------cp src/stage_00_template.py src/stage_01_base_model.py----------------------------
+
+#### To run the mlflow execute the code at the terminal
+```
+    mlflow run . --no-conda
+```
+
+#### To run the mlflow with parameters execute the code at the terminal below " . " means current directory
+
+```
+    mlflow run . -e entry_point_name -P configs/config2.yaml --no-conda
+    Ex:
+        mlflow run . -e get_data -P configs/config2.yaml --no-conda
+       
+```
