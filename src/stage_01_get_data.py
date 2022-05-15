@@ -4,7 +4,7 @@ import shutil
 from tqdm import tqdm
 import logging
 #Import the validdating image from src/utils/data_mgmt.py ,here src used as a package
-from src.utils.data_mgmt import validating_img 
+from src.utils.image_validation import validating_img 
 from src.utils.common import read_yaml, create_directories,unzip_file
 import random
 import urllib.request as req
