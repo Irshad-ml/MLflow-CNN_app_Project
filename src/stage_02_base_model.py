@@ -37,9 +37,10 @@ def main(config_path):
     classifier = tf.keras.Sequential(LAYERS)
     logging.info(f"base model summary:\n {log_model_summary(classifier)}")
     classifier.compile(
-    optimizer=tf.keras.optimizers.Adam(0.001),
-    loss=config["params"]["lr"],
+    optimizer=tf.keras.optimizers.Adam(config["params"]["lr"]),
+    loss=config["params"]["loss"],
     metrics=config["params"]["metrics"])
+    print("larning rate :",config["params"]["lr"])
 
     path_to_model_dir=os.path.join(config["data"]["local_dir"],config["data"]["model_dir"])
     create_directories([path_to_model_dir])
@@ -52,7 +53,6 @@ if __name__ == '__main__':
     # argparse.ArgumentParser() is used to take  user input value from command line
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default="configs/config.yaml")
-    args.add_argument("--params", "-p", default="params.yaml")
     parsed_args = args.parse_args()
 
     try:
