@@ -24,6 +24,7 @@ def main():
         #inside startrun() we run one mlflow event at a time so write below line code
         mlflow.run(".","get_data",use_conda=False) #first mlflow event
         mlflow.run(".","base_model_creation",use_conda=False) #second mlflow event
+        mlflow.run(".","training",use_conda=False) #second mlflow event
     
 
 
