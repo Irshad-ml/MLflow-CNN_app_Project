@@ -5,6 +5,7 @@ from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories
 import tensorflow as tf
+import mlflow
 
 
 STAGE = "TRAINING" ## <<< change stage name 
@@ -62,6 +63,11 @@ def main(config_path):
 
     classifier.save(trained_model_file)
     logging.info(f"trained model is saved at : {trained_model_file}")
+    
+    #Till now we did mlflow project pipeline .Now below is the code for Mlflow ui part
+    with mlflow.start_run() as runs:
+        mlflow.log_params(config["params"])
+        mlflow.keras.log_model(classifier,"model")
 
 
 if __name__ == '__main__':
